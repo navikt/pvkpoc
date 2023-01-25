@@ -45,7 +45,7 @@ export default function Pvk() {
         <div className="py-6 px-8">
             <div className="flex flex-col">
                 <Stepper
-                    className="max-w-2xl"
+                    className="md:max-w-2xl"
                     aria-labelledby="stepper-heading"
                     activeStep={activeStep}
                     onStepChange={(x) => setActiveStep(x)}
@@ -58,7 +58,7 @@ export default function Pvk() {
             </div>
             <form 
                 onSubmit={handleSubmit((d) => console.log(d))}
-                className="max-w-xl flex flex-col gap-4 py-4 px-16"
+                className="md:max-w-xl flex flex-col gap-4 py-4 px-4 md:px-16"
             >
                 <TextField {...register("tema")} label="Tema for PVK" error={errors.tema?.message?.toString()} />
                 <Select {...register("team")} label="Ansvarlig team" error={errors.team?.message?.toString()}>
