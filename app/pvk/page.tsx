@@ -28,7 +28,12 @@ export default function Pvk() {
       } = useForm({
         resolver: zodResolver(schema),
         defaultValues: {
-            participants: []
+            tema: "",
+            team: "",
+            participants: [],
+            risk_owner: "",
+            status: "under-arbeid",
+            comments: ""
         }
       });
 
@@ -64,11 +69,11 @@ export default function Pvk() {
                 <Controller control={control} name="participants" render={({field: { onChange, value}}) => (
                     <div>
                         <div className="flex gap-2 items-end">
-                            <TextField value={participant} onChange={(e) => setParticipant(e.currentTarget.value)} label="Deltakere" className="pb-2 flex-grow" />
+                            <TextField value={participant} onChange={(e) => setParticipant(e.currentTarget.value)} label="Deltakere" className="pb-2 flex-grow" error={errors.participants != null} />
                             <Button variant="secondary" className="h-12 my-2" onClick={(e) => {
                                 e.preventDefault();
                                 if (participant != "") {
-                                    value ? onChange([...value, participant]) : onChange([participant])
+                                    onChange([...value, participant])
                                     setParticipant("")
                                 }
                             }}>Legg til</Button>
