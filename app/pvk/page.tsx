@@ -53,7 +53,7 @@ export default function Pvk() {
                 >
                     <Stepper.Step href="#">Ansvarlige for PVK</Stepper.Step>
                     <Stepper.Step href="#">Behandlingsgrunnlag</Stepper.Step>
-                    <Stepper.Step href="#">Scenarier og tiltak</Stepper.Step>
+                    <Stepper.Step href="/pvk/scenarier">Scenarier og tiltak</Stepper.Step>
                 </Stepper>
             </div>
             <form 
